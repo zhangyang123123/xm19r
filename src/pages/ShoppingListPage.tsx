@@ -54,7 +54,7 @@ export default function ShoppingListPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50/30 to-stone-50">
-      <div className="max-w-xl mx-auto">
+      <div className="max-w-xl sm:max-w-3xl mx-auto">
         <header className="pt-8 pb-4 px-4">
           <div className="flex items-center gap-3 mb-2">
             <a

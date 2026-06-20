@@ -70,6 +70,12 @@ export const useFoodStore = create<FoodState>()(
       },
 
       toggleUsedUp: (id) => {
+        const state = get();
+        const item = state.items.find((i) => i.id === id);
+        if (!item) return;
+
+        const willMarkUsedUp = !item.usedUp;
+
         set((state) => ({
           items: state.items.map((item) =>
             item.id === id
@@ -77,6 +83,20 @@ export const useFoodStore = create<FoodState>()(
               : item
           ),
         }));
+
+        if (willMarkUsedUp) {
+          const existing = get().shoppingList.find((si) => si.fromItemId === id);
+          if (!existing) {
+            get().addToShoppingList({
+              name: item.name,
+              category: item.category,
+              quantity: item.threshold > 0 ? item.threshold : 1,
+              unit: item.unit,
+              reason: '已用完',
+              fromItemId: id,
+            });
+          }
+        }
       },
 
       consumeItem: (id, amount) => {

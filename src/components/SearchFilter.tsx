@@ -27,7 +27,7 @@ export function SearchFilter() {
         )}
       </div>
 
-      <div className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 scrollbar-hide">
+      <div className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 pr-24 scrollbar-hide">
         <button
           onClick={() => setSelectedCategory(null)}
           className={`shrink-0 h-8 px-3.5 rounded-full text-sm font-medium transition-all ${

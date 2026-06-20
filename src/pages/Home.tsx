@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 via-orange-50/30 to-stone-50">
-      <div className="max-w-xl mx-auto">
+      <div className="max-w-xl sm:max-w-3xl mx-auto">
         <Header shoppingCount={shoppingCount} />
         <AlertSection />
         <SearchFilter />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { X, Minus } from 'lucide-react';
 import type { FoodItem, Category, Unit } from '@/types';
 import { CATEGORIES, UNITS } from '@/types';
 import { useFoodStore } from '@/hooks/useFoodStore';
@@ -149,9 +149,9 @@ export function AddItemModal({ open, editingItem, onClose }: Props) {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-10 h-11 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all"
+                  className="w-10 h-11 shrink-0 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all flex items-center justify-center"
                 >
-                  −
+                  <Minus className="w-5 h-5" />
                 </button>
                 <input
                   type="number"
@@ -162,7 +162,7 @@ export function AddItemModal({ open, editingItem, onClose }: Props) {
                 />
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-10 h-11 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all"
+                  className="w-10 h-11 shrink-0 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all flex items-center justify-center"
                 >
                   +
                 </button>
@@ -191,9 +191,9 @@ export function AddItemModal({ open, editingItem, onClose }: Props) {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setThreshold(Math.max(0, threshold - 1))}
-                className="w-10 h-11 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all"
+                className="w-10 h-11 shrink-0 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all flex items-center justify-center"
               >
-                −
+                <Minus className="w-5 h-5" />
               </button>
               <input
                 type="number"
@@ -204,7 +204,7 @@ export function AddItemModal({ open, editingItem, onClose }: Props) {
               />
               <button
                 onClick={() => setThreshold(threshold + 1)}
-                className="w-10 h-11 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all"
+                className="w-10 h-11 shrink-0 rounded-xl bg-stone-100 text-stone-600 text-xl font-medium hover:bg-stone-200 transition-all flex items-center justify-center"
               >
                 +
               </button>
